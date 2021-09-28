@@ -22,7 +22,7 @@ namespace SalesWebMvc.Data
         {
             if (_context.Department.Any() || _context.Seller.Any() || _context.SalesRecord.Any())
             {
-                return; //DB foi povoado
+                return; // DB já foi populado!
             }
 
             Department d1 = new Department(1, "Computers");
@@ -35,7 +35,7 @@ namespace SalesWebMvc.Data
             Seller s3 = new Seller(3, "Alex Grey", "alex@gmail.com", new DateTime(1988, 1, 15), 2200.0, d1);
             Seller s4 = new Seller(4, "Martha Red", "martha@gmail.com", new DateTime(1993, 11, 30), 3000.0, d4);
             Seller s5 = new Seller(5, "Donald Blue", "donald@gmail.com", new DateTime(2000, 1, 9), 4000.0, d3);
-            Seller s6 = new Seller(6, "Alex Pink", "pink@gmail.com", new DateTime(1997, 3, 4), 3000.0, d2);
+            Seller s6 = new Seller(6, "Bruno Henrique", "brunin@gmail.com", new DateTime(1997, 3, 4), 3000.0, d2);
 
 
 
@@ -103,8 +103,11 @@ namespace SalesWebMvc.Data
 
             _context.Seller.AddRange(s1, s2, s3, s4, s5, s6);
 
-            _context.SalesRecord.AddRange(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14,
-            r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30);
+            _context.SalesRecord.AddRange(
+                r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, 
+                r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, 
+                r21, r22, r23, r24, r25, r26, r27, r28, r29, r30
+            );
 
             _context.SaveChanges();
         }
